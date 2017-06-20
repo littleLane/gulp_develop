@@ -1,0 +1,258 @@
+@white: #fff;
+@eee: #eee;
+
+body{
+    background-color: #f5f5f5;
+}
+
+a.blue{
+  color:#459ae9;
+  font-size: 14px;
+}
+
+//最外层容器
+.w-wrap{
+  width: 100%;
+  min-width:1200px;
+  &.wrap-box{
+    padding-top: 23px;
+    background:#f5f5f5;
+  }
+}
+
+//无样式居中容器
+.main-wrap{
+  margin:0 auto;
+  width:1200px;
+}
+//居中容器
+.center-wrap{
+  margin:0 auto;
+  background: @white;
+  width:1200px;
+  min-height: 643px;
+  border:1px solid @eee;
+  .l-wrap{
+    width: 279px;
+  }
+  .r-wrap{
+    width: 920px;
+  }
+}
+
+@tradeRecord: '../../../images/trade_record.png';
+@tradeSettle: '../../../images/trade_settle.png';
+@tradeFunds: '../../../images/trade_funds.png';
+@tradeCheck: '../../../images/trade_check.png';
+
+
+@h50: 50px;
+@border-eee: 1px solid #eee;
+@border-d8d8d8: 1px solid #d8d8d8;
+
+//左侧功能菜单列表
+.menu_list{
+  position: relative;
+  min-height: 643px;
+  border-right: @border-eee;
+  .menu_item{
+    margin-left: 25px;
+    font-size: 16px;
+    color: #999;
+    border-bottom: @border-eee;
+    &.last{
+      border-bottom: none;
+    }
+    .menu_title{
+      height: @h50;
+      line-height: @h50;
+      .icon{
+        margin-right: 18px;
+        display: inline-block;
+        vertical-align: middle;
+        width: 23px;
+        height: 25px;
+        &.trade_record{
+          background: url(@tradeRecord) no-repeat;
+        }
+        &.trade_settle{
+          background: url(@tradeSettle) no-repeat;
+        }
+        &.trade_funds{
+          background: url(@tradeFunds) no-repeat;
+        }
+        &.trade_check{
+          background: url(@tradeCheck) no-repeat;
+        }
+      }
+    }
+    li{
+      padding-left: 43px;
+      height: @h50;
+      line-height: @h50;
+      font-size:16px;
+      color:#666;
+      font-weight: 600;
+      cursor: pointer;
+      &.current{
+        color: #377bee;
+      }
+    }
+  }
+  .menu_mask{
+    position: absolute;
+    left: 0px;
+    width:277px;
+    height:50px;
+    border-left: 3px solid #377bee;
+    background: rgba(55, 123, 238, 0.05);
+    color: #377bee;
+    cursor: pointer;
+    &.t50{
+      top: 50px;
+    }
+    &.t151{
+      top: 151px;
+    }
+    &.t252{
+      top: 252px;
+    }
+    &.t302{
+      top: 302px;
+    }
+    &.t402{
+      top: 402px;
+    }
+  }
+}
+
+//右侧主功能部分 表单+数据表格
+.func_box{
+  min-height: 643px;
+  .func_title{
+    height: 60px;
+    line-height: 60px;
+    border-left: 3px solid #377bee;
+    border-bottom: @border-eee;
+    font-size:16px;
+    font-weight: bold;
+    color:#333;
+    .to_withdrawRecords{
+      margin-right: 20px;
+      color:#459ae9;
+      font-size: 14px;
+      font-weight: normal;
+    }
+  }
+  .func_content{
+    margin-left: 34px; 
+    padding-top: 24px;
+    .func_data{
+      padding-right: 20px;
+      .func_data_top{
+        height: 40px;
+        line-height: 40px;
+        .data_count{
+          color: #999;
+        }
+        .datadown_btn{
+          margin-top: 12px;
+          padding: 0px;
+          width: 82px;
+          height: 18px;
+          text-align: center;
+          line-height: 18px;
+          border: @border-d8d8d8;
+          font-size: 12px;
+          color: #999;
+        }
+      }
+      .table_data{
+        .out{
+          color:#ff604c;
+        }
+        .in{
+          color:#11c243;
+        }
+        th{
+          padding: 4px 8px;
+          color: #999;
+        }
+        td{
+          padding: 5px 8px;
+          font-size: 14px;
+          a{
+            color:#459ae9;
+          }
+        }
+      }
+    }
+  }
+  .func_form{
+      padding-bottom: 18px;
+      border-bottom: @border-eee;
+      p{
+        label{
+          display: inline-block;
+          width: 98px;
+          height: 20px;
+          line-height: 20px;
+          text-align: right;
+        }
+      }
+      .input_time{
+        width: 90px;
+        height: 26px;
+        border: @border-d8d8d8;
+      }
+      .input_text{
+        border: @border-d8d8d8;
+        width: 193px;
+        height: 26px;
+      }
+      .form_btn{
+        margin-top: 12px;
+        background:#377bee;
+        width:192px;
+        height:28px;
+        line-height: 28px;
+      }
+      .btn_choose{
+        margin-right: 8px;
+        width: 90px;
+        height: 28px;
+        line-height: 28px;
+        text-align: center;
+        border: @border-d8d8d8;
+        color: #999;
+        &.current{
+          border:1px solid #377bee;
+          color: #377bee;
+        }
+      }
+    }
+}
+
+//右侧主功能部分 详情数据页
+.detail_content{
+  padding: 30px 0 0 24px;
+  .detail_item{
+    margin-bottom: 16px;
+    font-size:14px;
+    .detail_title{
+      height: 44px;
+      line-height: 44px;
+      border-bottom: @border-eee;
+      font-size:16px;
+      color:#333;
+    }
+    .detail_data{
+      padding-top: 20px;
+      p{
+        display: inline-block;
+        width: 374px;
+      } 
+    }
+  }
+}
+

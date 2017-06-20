@@ -1,0 +1,147 @@
+@charset "utf-8";
+@w: 1200px;
+@h32: 32px;
+@h80: 80px;
+
+@todo_center: "../../../images/todo_center.png";
+@msg_center: '../../../images/msg_center.png';
+@help_center: '../../../images/help_center.png';
+@download_buffer: '../../../images/download_buffer.png';
+
+body{
+    background-color: #f5f5f5;
+}
+
+.mer_header{
+    width: 100%;
+    height: @h32 + @h80;
+    border-bottom:2px solid #00539b;
+    background: #fff; 
+    .mer_header_top{
+        width: 100%;
+        height: @h32;
+        color: #666;
+        background:#f5f5f5;
+        .header_top_box{
+            margin: 0 auto;
+            width: @w;
+            line-height: @h32;
+            .fl .l_welcome{
+                margin-right: 20px;
+                em{
+                    font-style: normal;
+                }
+            }
+            .fl .logout{
+                color: #666;
+            }
+            .fr li{
+                float: left;
+                margin-right: 30px;
+                height: @h32;
+                line-height: @h32;
+            }
+            .fr li.last{
+                margin-right: 0px;
+            }
+            .fr .icon{
+                display: inline-block;
+                margin-right: 6px; 
+                width: 19px;
+                height: 19px;
+                vertical-align: middle;
+            }
+            .fr .icon.icon_todo{
+                background: url(@todo_center) no-repeat;
+            }
+            .fr .icon.icon_msg{
+                background: url(@msg_center) no-repeat;
+            }
+            .fr .icon.icon_help{
+                background: url(@help_center) no-repeat;
+            }
+        }
+    }
+    .mer_header_bottom{
+        width: 100%;
+        height: @h80;
+        .header_bottom_box{
+            margin: 0 auto;
+            width: @w;
+            line-height: @h80;
+            .fl .l_logo{
+                vertical-align: middle;
+            }
+            .fr .r_help{
+                color: #666;
+                font-size: 14px;
+                a{
+                    color:#459ae9;
+                }
+            }
+            .fr.tool_menu{
+                height: 80px;
+                line-height: 80px;
+                li{
+                    width: 150px;
+                    float: left;
+                    font-size: 20px;
+                    text-align: right;
+                    cursor: pointer;
+                    &:hover, &.current{
+                        color: #00539b;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.download_buffer{
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 10;
+    height: 100%;
+    width: 40px;
+    background: rgba(0, 0, 0, 0.7);
+    font-size: 0px;
+    .buffer{
+        position: absolute;
+        top: 50%;
+        left: 8.5px;
+        margin-top: -71px;
+        color: #fff;
+        width: 23px;
+        text-align: center;
+        .buffer_text{
+            font-size: 14px;
+        }
+        .buffer_icon{
+            display: inline-block;
+            background: url(@download_buffer) no-repeat;
+            width: 23px;
+            height: 23px;
+            margin-bottom: 9px;
+        }
+    }
+}
+
+
+//底部
+.mer_footer{
+    margin-top: 20px;
+    width: 100%;
+    height: 32px;
+    line-height: 32px;
+    background: #fff;
+    .footer_content{
+        margin: 0 auto;
+        width: 304px;
+        font-size: 12px;
+        color: #999;
+        .beian{
+            margin-right: 60px;
+        }
+    }
+}

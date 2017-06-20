@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    @@include('../../layout/head.html')
+    <title>微医商户平台 - 首页</title>
+    <link rel="stylesheet" href="../../../style/module/headerPage/headerPage.css">
+</head>
+<body>
+    @@include('../../layout/header.html')
+    <div class="headerPage-wrap">
+        <div class="headerPage-center-wrap clearfix">
+            <div class="f-l fl-wrap">
+                <div class="fl-box mt-20">
+                    <div class="fl-box-top">
+                        <ul>
+                            <li class="zhye">
+                                <i class="money_icon zhye_icon"></i>账户余额<span class="money_num">0.00</span>元
+                                <a href="javascript:;" class="withdraw_btn">提现</a>
+                            </li>
+                            <li class="djsye">
+                                <i class="money_icon djsye_icon"></i>待结算金额<span class="money_num">0.00</span>元
+                            </li>
+                        </ul>
+                        <div class="clearfix"></div>
+                        <p class="come_tip">累计收益 : <span>1.01</span>元　|　昨日收益 : <span>0.01</span>元　|　七日年化收益率 : <span>4.2%</span></p>
+                    </div>
+                    <div class="fl-box-bottom">
+                        <div class="data_title clearfix">
+                            <div class="f-l fl_data">
+                                <i></i>数据概览
+                            </div>
+                            <div class="f-r fr_data">
+                                <ul class="clearfix">
+                                    <li>今天</li>
+                                    <li>本周</li>
+                                    <li>本月</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="data_content">
+                            <div class="data_list clearfix">
+                                <ul>
+                                    <li>
+                                        <span>交易金额</span>
+                                        <span><i>100.00</i>元</span>
+                                    </li>
+                                    <li>
+                                        <span>发起订单笔数</span>
+                                        <span><i>100</i>笔</span>
+                                    </li>
+                                    <li>
+                                        <span>成功订单笔数</span>
+                                        <span><i>90</i>笔</span>
+                                    </li>
+                                    <li>
+                                        <span>订单转化率</span>
+                                        <span><i>90.0%</i></span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="data_map_list">
+                                <div class="data_map">
+                                    <div id="map1" style="width: 724px;height:200px;"></div>
+                                    <div class="map_change" id="mapChange1">
+                                        <i class="f-l change_icon prev"></i>
+                                        <i class="f-r change_icon next current"></i>
+                                    </div>
+                                </div>
+                                <div class="data_map">
+                                    <div id="map2" style="width: 724px;height:200px;"></div>
+                                    <!--<div class="map_change" id="mapChange2">
+                                        <i class="f-l change_icon prev"></i>
+                                        <i class="f-r change_icon next current"></i>
+                                    </div>-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="f-r fr-wrap">
+                <div class="pl-20 fr-box-top">
+                    <p>
+                        <label>商户号：</label>
+                        <span>88881212121288</span>
+                    </p>
+                    <p>
+                        <label>公司名称：</label>
+                        <span>效果图有限公司</span>
+                    </p>
+                    <p>
+                        <label>开户银行：</label>
+                        <span>中国招商银行</span>
+                    </p>
+                    <p>
+                        <label>银行账户：</label>
+                        <span>6546356446***232637263</span>
+                    </p>
+                </div>
+                <div class="mt-15 fr-box-center">
+                    <div class="fr-box-title clearfix">
+                        <span class="f-l">平台公告</span>
+                        <a href="javascript:;" class="f-r mr-10">更多>></a>
+                    </div>
+                    <div class="pt-30 pl-20 center-content">
+                        <ul>
+                            <li>[<span>3.29</span>]<span>你刷刷刷爱是爱和赛事</span></li>
+                            <li>[<span>3.29</span>]<span>你刷刷刷爱是爱和赛事</span></li>
+                            <li>[<span>3.29</span>]<span>你刷刷刷爱是爱和赛事</span></li>
+                            <li>[<span>3.29</span>]<span>你刷刷刷爱是爱和赛事</span></li>
+                            <li>[<span>3.29</span>]<span>你刷刷刷爱是爱和赛事</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mt-15 fr-box-bottom fr-box-center">
+                    <div class="fr-box-title">
+                        <span>签约产品</span>
+                    </div>
+                    <div class="pl-20 bottom-content">
+                        <p>
+                            <label>产品名称：</label>
+                            <span>扫码支付</span>
+                        </p>
+                        <p>
+                            <label>签约状态：</label>
+                            <span>已签约</span>
+                        </p>
+                        <p>
+                            <label>签约时间：</label>
+                            <span>2017/4/24</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @@include('../../layout/footer.html')
+    <script type="text/javascript" src="../../../../../plugins/jquery/1.8.3/jquery.min.js"></script>
+    <script src="../../../../../plugins/echarts/3.6.1/echarts.js"></script>
+    <script src="../../../js/module/chart1.js"></script>
+    <!--<script src="../../../js/module/chart2.js"></script>-->
+</body>
+</html>

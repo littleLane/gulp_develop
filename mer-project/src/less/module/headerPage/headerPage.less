@@ -1,0 +1,210 @@
+@import '../../../../../plugins/h-ui/3.1/css/H-ui.min.css';
+@import '../../common/header.less';
+
+@djsye: "../../../images/djsye.png";
+@zhye: "../../../images/zhye.png";
+
+@mapPrev: "../../../images/map_prev.png";
+@mapPrev1: "../../../images/map_prev_1.png";
+@mapNext: "../../../images/map_next.png";
+@mapNext1: "../../../images/map_next_1.png";
+
+@white: #fff;
+@eee: #eee;
+
+.headerPage-wrap{
+    padding-top: 23px;
+    width: 100%;
+    background:#f5f5f5;
+    .headerPage-center-wrap{
+        width: 1200px;
+        margin: 0 auto;
+        background:#f5f5f5;
+        border: none;
+        .fl-wrap{
+            width: 868px;
+            min-height: 643px;
+            background: @white;
+            border:1px solid @eee;
+            .fl-box{
+                padding-left: 40px;
+            }
+        }
+        .fr-wrap{
+            width: 312px;
+            .fr-box-top{
+                background: @white;
+                padding-top: 28px;
+                padding-bottom: 18px;
+                border:1px solid @eee;
+                span{
+                    font-size: 14px;
+                }
+            }
+            .fr-box-center{
+                background: @white;
+                width:100%;
+                height:258px;
+                border:1px solid @eee;
+                .center-content{
+                    font-size: 14px;
+                    li{
+                        margin-bottom: 14px;
+                    }
+                }
+            }
+            .fr-box-bottom{
+                width:310px;
+                height:177px;
+                .bottom-content{
+                    padding-top: 28px;
+                    padding-bottom: 18px;
+                    font-size: 14px;
+                }
+            }
+            .fr-box-title{
+                padding-left: 10px;
+                height: 32px;
+                line-height: 32px;
+                border-bottom:1px solid @eee;
+                border-left: 3px solid #377bee;
+                span{
+                    font-size: 16px;
+                    color: #333;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
+
+//左侧部分
+.fl-box-top{
+    font-size: 16px;
+    color: #666;
+    li{
+        float: left;
+        .money_icon{
+            display: inline-block;
+            margin-right: 10px;
+            vertical-align: middle; 
+            width: 20px;
+            height: 20px;
+            &.zhye_icon{
+                background: url(@zhye) no-repeat;
+            }
+            &.djsye_icon{
+                background: url(@djsye) no-repeat;
+            }
+        }
+        .money_num{
+            display: inline-block;
+            height: 56px;
+            line-height: 56px;
+            margin: 0 15px;
+            font-size: 40px;
+            color: #333;
+        }
+        .withdraw_btn{
+            margin-left: 25px; 
+            font-size:16px;
+            color:#459ae9;
+        }
+        &.zhye{
+            margin-right: 210px;
+        }
+    }
+    .come_tip{
+        padding-left: 30px;
+        font-size:12px;
+        color:#666;
+    }
+}
+.fl-box-bottom{
+    .data_title{
+        padding-right: 20px;
+        height: 32px;
+        line-height: 32px;
+        border-bottom: 1px solid #eee;
+        .fl_data{
+            font-size: 16px;
+            color: #333;
+            font-weight: bold;
+            i{
+                display: inline-block;
+                margin: -4px 20px 0 0;
+                vertical-align: middle;
+                width:3px;
+                height:20px;
+                background:#377bee;
+            }
+        }
+        .fr_data{
+            margin-top: 5px;
+            li{
+                float: left;
+                margin-left: 4px;
+                border:1px solid #d8d8d8;
+                width:82px;
+                height:18px;
+                text-align: center;
+                line-height: 18px;
+                cursor: pointer;
+                &:hover, &.current{
+                    border: 1px solid #377bee;
+                    color: #377bee;
+                }
+            }
+        }
+    }
+    .data_content{
+        .data_list{
+            padding-left: 40px;
+            padding-top: 20px;
+            margin-bottom: 18px;
+            li{
+                float: left;
+                padding-left: 80px;
+                width: 74px;
+                height: 45px;
+                text-align: center;
+                i{
+                    font-style: normal;
+                    font-size: 18px;
+                    font-weight: bold;
+                }
+            }
+        }
+        .data_map_list{
+            margin-left: 66px;
+            .data_map{
+                position: relative;
+                margin-bottom: 8px;
+                .map_change{
+                    position: absolute;
+                    right: 35px;
+                    bottom: -4px;
+                    width: 96px;
+                    .change_icon{
+                        display: inline-block;
+                        width: 20px;
+                        height: 30px;
+                        cursor: pointer;
+                    }
+                    .prev{
+                        background: url(@mapPrev) no-repeat;
+                        &.current{
+                            background: url(@mapPrev1) no-repeat;
+                        }
+                    }
+                    .next{
+                        background: url(@mapNext) no-repeat;
+                        &.current{
+                            background: url(@mapNext1) no-repeat;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
