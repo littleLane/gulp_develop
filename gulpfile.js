@@ -57,12 +57,15 @@ gulp.task('useref', function(){
 		}))
 		.pipe(notify({message: "解析html代码里面的include---complete！"}))
 		.pipe(useref())
-		.pipe(notify({message: "替换js静态资源路由---complete！"}))
+		.pipe(notify({message: "替换js以及css静态资源路由---complete！"}))
 		.pipe(gulp.dest(projectName + appSrc.devPath))
 		.pipe(fileFilter.jsFilter)
 		.pipe(uglify())
 		.pipe(fileFilter.jsFilter.restore)
-		.pipe(notify({message: "压缩替换后的js静态资源---complete！"}))
+		.pipe(fileFilter.cssFilter)
+		.pipe(minifycss())
+		.pipe(fileFilter.cssFilter.restore)
+		.pipe(notify({message: "压缩替换后的js以及css静态资源---complete！"}))
     	.pipe(gulp.dest(projectName + appSrc.prdPath));
 });
 
@@ -86,7 +89,7 @@ gulp.task('css', function(){
 			debug: false
 		}))
 		.pipe(notify({message: "css文件图标转换成base64---complete！"}))
-    	// .pipe(gulp.dest(projectName + appSrc.srcPath + 'style'))
+    	.pipe(gulp.dest(projectName + appSrc.srcPath + 'style'))
     	.pipe(gulp.dest(projectName + appSrc.devPath + 'style'))
     	.pipe(minifycss())
     	.pipe(gulp.dest(projectName + appSrc.prdPath + 'style'))
@@ -119,7 +122,7 @@ gulp.task('clean', function(){
 gulp.task('build', sequence('clean', 'image', 'css', 'useref'));
 
 //文件任务监听以及重新加载
-gulp.task('cssWatch', ['css'], browserSync.reload);
+gulp.task('cssWatch', ['css', 'useref'], browserSync.reload);
 gulp.task('htmlWatch', ['useref'], browserSync.reload);
 gulp.task('jsWatch', ['useref'], browserSync.reload);
 gulp.task('imageWatch', ['image'], browserSync.reload);

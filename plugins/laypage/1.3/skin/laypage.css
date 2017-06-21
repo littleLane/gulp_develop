@@ -47,5 +47,5 @@
 /* 上下页切换 */
 .laypage_main .no-prev, .laypage_main .no-next{cursor: default;}
 .laypage_main i{margin-top: -3px; width: 9px; height: 14px; display: inline-block;vertical-align: middle}
-.to_prev{background: url('page_prev.png') no-repeat;}
-.to_next{background: url('page_next.png') no-repeat;}
+.to_prev{background: url('/images/page_prev.png') no-repeat;}
+.to_next{background: url('/images/page_next.png') no-repeat;}

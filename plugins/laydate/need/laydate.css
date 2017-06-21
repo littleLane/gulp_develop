@@ -103,7 +103,7 @@ html{_background-image:url(about:blank); _background-attachment:fixed;}
 .laydate_body .laydate_choose{border-left:1px solid #377bee;}
 .laydate_body .laydate_chprev{border-left:none; border-right:1px solid #377bee;}
 .laydate_body .laydate_choose:hover, 
-.laydate_body .laydate_y .laydate_yms a:hover{background-color:#00C1B3;}
+.laydate_body .laydate_y .laydate_yms a:hover{background-color:#377BA5;;}
 .laydate_body .laydate_chtop cite{border-bottom-color:#fff;}
 .laydate_body .laydate_chdown cite, .laydate_body .laydate_ym label{border-top-color:#fff;}
 .laydate_body .laydate_chprev cite{border-right-style:solid; border-right-color:#fff;}
