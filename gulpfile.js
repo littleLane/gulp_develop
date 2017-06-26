@@ -97,6 +97,15 @@ gulp.task('css', function(){
         .pipe(browserSync.reload({stream:true}));
 });
 
+//处理字体图标文件
+gulp.task('fontIcon', function(){
+	return gulp.src(projectName + appSrc.srcPath + 'fonts/**/*')
+		.pipe(changed(projectName + appSrc.devPath + 'fonts'))
+		.pipe(gulp.dest(projectName + appSrc.devPath + 'fonts'))
+		.pipe(gulp.dest(projectName + appSrc.prdPath + 'fonts'))
+		.pipe(notify({message: "处理字体图标---complete！"}));
+});
+
 //images
 gulp.task('image', function(){
 	return gulp.src(projectName + appSrc.srcPath + 'images/**/*')
@@ -119,7 +128,7 @@ gulp.task('clean', function(){
 });
 
 //build总任务
-gulp.task('build', sequence('clean', 'image', 'css', 'useref'));
+gulp.task('build', sequence('clean', 'image', 'fontIcon', 'css', 'useref'));
 
 //文件任务监听以及重新加载
 gulp.task('cssWatch', ['css', 'useref'], browserSync.reload);
