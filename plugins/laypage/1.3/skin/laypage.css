@@ -33,7 +33,7 @@
 .laypageskin_flow .page_nomore{color:#999}
 
 /****************************** 定制化样式 *************************************/
-.page_paginate{float: right; margin: 30px 0 40px;}
+.page_paginate{float: right; margin: 30px 20px 30px 0;}
 .page_paginate .laypage_main *{font-size: 14px;}
 .page_paginate .laypage_main span, .page_paginate .laypage_main a{height: 20px;line-height: 20px;}
 .page_paginate .laypage_main .laypage_total{padding: 0px;margin: 0px;margin-left: 10px;}
@@ -47,5 +47,9 @@
 /* 上下页切换 */
 .laypage_main .no-prev, .laypage_main .no-next{cursor: default;}
 .laypage_main i{margin-top: -3px; width: 9px; height: 14px; display: inline-block;vertical-align: middle}
-.to_prev{background: url('/images/page_prev.png') no-repeat;}
-.to_next{background: url('/images/page_next.png') no-repeat;}
+
+.laypage_prev .to_prev:hover{background: url('/images/laypage/page_prev_1.png') no-repeat;}
+.laypage_prev .to_prev, .laypage_prev.no-prev .to_prev{background: url('/images/laypage/page_prev.png') no-repeat;}
+
+.laypage_next .to_next:hover{background: url('/images/laypage/page_next_1.png') no-repeat;}
+.laypage_next .to_next, .laypage_next.no-next .to_next{background: url('/images/laypage/page_next.png') no-repeat;}

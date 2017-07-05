@@ -44,7 +44,7 @@ var projectName = './mer-project/',	//项目名
 
 //合并并压缩html代码里面的JavaScript脚本文件
 gulp.task('useref', function(){
-	return gulp.src(projectName + appSrc.srcPath + '**/module/**/*.html')
+	return gulp.src([projectName + appSrc.srcPath + '**/*.html', '!' + projectName + appSrc.srcPath + 'html/layout/**', '!' + projectName + appSrc.srcPath + 'mock/**'])
 		.pipe(plumber({
 			  errorHandler: function(error){
 				  this.emit('end');
@@ -71,7 +71,7 @@ gulp.task('useref', function(){
 
 //css
 //在src下创建less文件夹，里面存放less文件。只需要index.less文件作为入口，其他的子less文件的引用 通过在index.less中使用@import来实现
-gulp.task('css', function(){
+gulp.task('less2css', function(){
   	return gulp.src(projectName + appSrc.srcPath + 'less/**/*.less')
 	  	.pipe(changed(projectName + appSrc.devPath + 'less'))
 		.pipe(gulp.dest(projectName + appSrc.devPath + 'less'))
@@ -90,12 +90,18 @@ gulp.task('css', function(){
 		}))
 		.pipe(notify({message: "css文件图标转换成base64---complete！"}))
     	.pipe(gulp.dest(projectName + appSrc.srcPath + 'style'))
-    	.pipe(gulp.dest(projectName + appSrc.devPath + 'style'))
-    	.pipe(minifycss())
+    	.pipe(gulp.dest(projectName + appSrc.devPath + 'style'));
+});
+
+gulp.task('copycss', function(){
+	return gulp.src([projectName + appSrc.srcPath + 'style/**/*.css', '!' + projectName + appSrc.srcPath + 'style/common/**'])
+		.pipe(minifycss())
     	.pipe(gulp.dest(projectName + appSrc.prdPath + 'style'))
 		.pipe(filter('**/*.css')) // Filtering stream to only css files
         .pipe(browserSync.reload({stream:true}));
 });
+
+gulp.task('css', sequence('less2css', 'copycss'));
 
 //处理字体图标文件
 gulp.task('fontIcon', function(){
@@ -140,8 +146,7 @@ gulp.task('imageWatch', ['image'], browserSync.reload);
 gulp.task('browserSync', ['build'], function(){
 	browserSync({
 		server: {
-			baseDir: [projectName + appSrc.devPath, './', projectName, projectName + appSrc.srcPath],
-			index: 'html/module/index.html'
+			baseDir: [projectName + appSrc.devPath, './', projectName, projectName + appSrc.srcPath]
 		}
 	});
 

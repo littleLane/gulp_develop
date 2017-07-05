@@ -44,7 +44,7 @@ var layer = {
     if(ready.config.path) layer.ready();
     
     if(!options.extend) return this;
-    
+   
     isLayui 
       ? layui.addcss('modules/layer/' + options.extend)
     : layer.link('skin/' + options.extend);
@@ -54,7 +54,6 @@ var layer = {
   
   //载入CSS配件
   link: function(href, fn, cssname){
-    
     //未设置路径，则不主动加载css
     if(!layer.path) return;
     
@@ -68,7 +67,7 @@ var layer = {
     link.id = id;
     
     if(!$('#'+ id)[0]){
-      head.appendChild(link);
+      // head.appendChild(link);
     }
     
     if(typeof fn !== 'function') return;
@@ -217,8 +216,8 @@ Class.pt.vessel = function(conType, callback){
     //主体
     '<div class="'+ doms[0] + (' layui-layer-'+ready.type[config.type]) + (((config.type == 0 || config.type == 2) && !config.shade) ? ' layui-layer-border' : '') + ' ' + (config.skin||'') +'" id="'+ doms[0] + times +'" type="'+ ready.type[config.type] +'" times="'+ times +'" showtime="'+ config.time +'" conType="'+ (conType ? 'object' : 'string') +'" style="z-index: '+ zIndex +'; width:'+ config.area[0] + ';height:' + config.area[1] + (config.fixed ? '' : ';position:absolute;') +'">'
       + (conType && config.type != 2 ? '' : titleHTML)
-      + '<div id="'+ (config.id||'') +'" class="layui-layer-content'+ ((config.type == 0 && config.icon !== -1) ? ' layui-layer-padding' :'') + (config.type == 3 ? ' layui-layer-loading'+config.icon : '') +'">'
-        + (config.type == 0 && config.icon !== -1 ? '<i class="layui-layer-ico layui-layer-ico'+ config.icon +'"></i>' : '')
+      + '<div id="'+ (config.id||'') +'" class="layui-layer-content'+ ((config.type == 0 && config.icon !== -1 && typeof config.icon !== "string") ? ' layui-layer-padding' :' layui-layer-padding-min') + (config.type == 3 ? ' layui-layer-loading'+config.icon : '') +'">'
+        + (config.type == 0 && config.icon !== -1 ? '<i class="'+ (typeof config.icon === "string" ? "page-wrong " + config.icon : "layui-layer-ico layui-layer-ico" +  config.icon) +'"></i>' : '')
         + (config.type == 1 && conType ? '' : (config.content||''))
       + '</div>'
       + '<span class="layui-layer-setwin">'+ function(){
@@ -757,7 +756,6 @@ layer.style = function(index, options, limit){
   ,titHeight = layero.find(doms[1]).outerHeight() || 0
   ,btnHeight = layero.find('.'+doms[6]).outerHeight() || 0
   ,minLeft = layero.attr('minLeft');
-  
   if(type === ready.type[3] || type === ready.type[4]){
     return;
   }

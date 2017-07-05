@@ -4,8 +4,8 @@
     @@include('../../layout/head.html')
     <title>微医商户平台 - 首页</title>
     <!-- build:css /style/module/headerPage/headerPage.css -->
-    <link rel="stylesheet" href="../../../../plugins/h-ui/3.1/css/H-ui.min.css">
-    <link rel="stylesheet" href="../../style/module/headerPage/headerPage.css">
+    <link rel="stylesheet" href="../../plugins/h-ui/3.1/css/H-ui.min.css">
+    <link rel="stylesheet" href="./style/module/headerPage/headerPage.css">
     <!-- endbuild -->
 </head>
 <body>
@@ -18,7 +18,7 @@
                         <ul>
                             <li class="zhye">
                                 <i class="money_icon zhye_icon"></i>账户余额<span class="money_num" id="acBal"></span>元
-                                <a href="../tradingCenter/withdrawDetail.html" class="withdraw_btn">提现</a>
+                                <a href="javascript:;" class="withdraw_btn">提现</a>
                             </li>
                             <li class="djsye">
                                 <i class="money_icon djsye_icon"></i>待结算金额<span class="money_num" id="stlBal"></span>元
@@ -103,7 +103,7 @@
                 <div class="mt-15 fr-box-center">
                     <div class="fr-box-title clearfix">
                         <span class="f-l">平台公告</span>
-                        <a href="../notifyCenter/notifyList.html" class="f-r mr-10">更多>></a>
+                        <a href="javascript:;" class="f-r mr-10">更多>></a>
                     </div>
                     <div class="pt-30 pl-20 center-content" id="notifyList">
                         <script type="text/template" id="notifyListTpl">
@@ -145,15 +145,15 @@
     @@include('../../layout/footer.html')
 
     <!-- build:js /js/module/headerPage/headerPage.js -->
-    <script type="text/javascript" src="../../../../../plugins/jquery/1.8.3/jquery.min.js"></script>
-    <script type="text/javascript" src="../../../../../plugins/echarts/3.6.1/echarts.js"></script>
-    <script type="text/javascript" src="../../../../../plugins/template/template.js"></script>
+    <script type="text/javascript" src="../../plugins/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript" src="../../plugins/echarts/3.6.1/echarts.js"></script>
+    <script type="text/javascript" src="../../plugins/template/template.js"></script>
 
-    <script type="text/javascript" src="../../../js/common/config.js"></script>
-    <script type="text/javascript" src="../../../js/common/common.js"></script>
-    <script type="text/javascript" src="../../../js/module/headerPage/headerPage.js"></script>
+    <script type="text/javascript" src="./js/common/config.js"></script>
+    <script type="text/javascript" src="./js/common/common.js"></script>
+    <script type="text/javascript" src="./js/module/headerPage/headerPage.js"></script>
     <!-- endbuild -->
-    <script src="../../../js/module/chart1.js"></script>
+    <script src="./js/module/chart1.js"></script>
     <!--<script src="../../../js/module/chart2.js"></script>-->
 </body>
 </html>
